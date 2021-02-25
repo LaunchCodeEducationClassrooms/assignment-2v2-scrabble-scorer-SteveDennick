@@ -73,16 +73,19 @@ let scrabbleScore = function(word){
   return score;
 }
 
-let algorithm0 = {name: "Simple Score", description: "Each letter is worth 1 point.", scorerFunction: simpleScore};
-let algorithm1 = {name: "Bonus Vowels", description: "Vowels are 3 pts, consonants are 1 pt.", scorerFunction: vowelBonusScore};
-let algorithm2 = {name: "Scrabble", description: "The tradtional scoring algorithm.", scorerFunction: scrabbleScore};
 
-const scoringAlgorithms = [algorithm0, algorithm1, algorithm2];
+
+const scoringAlgorithms = [
+  {name: "Simple Score", description: "Each letter is worth 1 point.", scoringFunction: simpleScore},
+  {name: "Bonus Vowels", description: "Vowels are 3 pts, consonants are 1 pt.", scoringFunction: vowelBonusScore},
+  {name: "Scrabble", description: "The tradtional scoring algorithm.", scoringFunction: scrabbleScore}
+];
+
 
 function scorerPrompt(userWord) {
   console.log(`Which scoring algorithm would you like to use?\n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scabble point system`)
   let scoringChoice = input.question("Enter 0, 1, or 2: ");
-  return console.log(`Score for "${userWord}": ${scoringAlgorithms[scoringChoice].scorerFunction(userWord)}`);
+  return console.log(`Score for "${userWord}": ${scoringAlgorithms[scoringChoice].scoringFunction(userWord)}`);
 }
 
 function transform(obj) {
