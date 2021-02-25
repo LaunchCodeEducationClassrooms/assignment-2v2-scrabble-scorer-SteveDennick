@@ -38,7 +38,7 @@ function initialPrompt() {
 
 let simpleScore = function(word){
   word = word.toUpperCase();
-  let letterPoints = "";
+  let letterPoints = 0;
     for (let i = 0; i < word.length; i++){
       for (item in oldPointStructure) {
         if (oldPointStructure[item].includes(word[i])){
@@ -51,7 +51,7 @@ let simpleScore = function(word){
 
 let vowelBonusScore = function(word){
   word = word.toUpperCase();
-  let letterPoints = "";
+  let letterPoints = 0;
     for (let i = 0; i < word.length; i++){
       if (word[i] === "A" ||word[i] === "E" ||word[i] === "I" ||word[i] === "O" ||word[i] === "U"){
         letterPoints+= 3;
