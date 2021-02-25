@@ -89,7 +89,7 @@ function scorerPrompt(userWord) {
 }
 
 function transform(obj) {
-  let transformedObj = {' ':0}
+  let transformedObj = {};
   for (item in obj){
     for (i = 0; i < obj[item].length; i++) {
       transformedObj[obj[item][i].toLowerCase()] = Number(item);
@@ -104,8 +104,6 @@ console.log(newPointStructure)
 function runProgram() {
   let word = initialPrompt();
   scorerPrompt(word);
-  
-   
 }
 
 // Don't write any code below this line //
